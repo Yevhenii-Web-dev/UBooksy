@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('laptop_id');
             $table->string('model', 50);
             $table->smallInteger('speed');
-            $table->smallInteger('ram');
-            $table->double('ram');
+            $table->smallInteger('laptop_ram');
+            $table->double('hd');
             $table->decimal('price', 12,2);
             $table->tinyInteger('screen');
             $table->timestamps();

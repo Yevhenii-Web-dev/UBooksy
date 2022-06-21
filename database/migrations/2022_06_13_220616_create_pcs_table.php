@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pcs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('pc_id');
+            $table->smallInteger('speed');
+            $table->smallInteger('pc_ram');
+            $table->double('hd');
+            $table->string('cd');
+            $table->decimal('price', 12,2);
             $table->timestamps();
         });
     }

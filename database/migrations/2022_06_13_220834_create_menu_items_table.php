@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('menu_items', function (Blueprint $table) {
-            $table->id();
+            $table->increments('menu_item_id');
+            $table->string('name', 100);
+            $table->string('path', 255);
+            $table->tinyInteger('active');
+            $table->smallInteger('sort_order');
             $table->timestamps();
         });
     }

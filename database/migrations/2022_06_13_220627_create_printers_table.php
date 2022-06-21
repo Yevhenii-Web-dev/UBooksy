@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('printers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('printer_id');
+            $table->string('model', 50);
+            $table->string('color', 1);
+            $table->string('type', 10);
+            $table->decimal('price', 12,2);
             $table->timestamps();
         });
     }
