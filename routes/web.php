@@ -16,13 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/equipments', [EquipmentController::class, 'index'])->name('posts.index');
-Route::get('/equipments/create', [EquipmentController::class, 'create'])->name('posts.index');
-Route::get('/equipments/update', [EquipmentController::class, 'update'])->name('posts.index');
-Route::get('/equipments/delete', [EquipmentController::class, 'delete'])->name('posts.index');
-Route::get('/equipments/first_or_create', [EquipmentController::class, 'firstOrCreate'])->name('posts.index');
-Route::get('/equipments/update_or_create', [EquipmentController::class, 'updateOrCreate'])->name('posts.index');
+// CRUD conventions laravel
+Route::GET('/equipments', [EquipmentController::class, 'index'])->name('equipment.index');
+Route::GET('/equipments/create', [EquipmentController::class, 'create'])->name('equipment.create');
+Route::POST('/equipments', [EquipmentController::class, 'store'])->name('equipment.store');
+Route::GET('/equipments/{equipment}', [EquipmentController::class, 'show'])->name('equipment.show');
+Route::GET('/equipments/{equipment}/edit', [EquipmentController::class, 'edit'])->name('equipment.edit');
+Route::PATCH('/equipments/{equipment}', [EquipmentController::class, 'update'])->name('equipment.update');
+Route::DELETE('/equipments/{equipment}', [EquipmentController::class, 'destroy'])->name('equipment.destroy');
+
+
+
+
+
+
+// test trenning
+//Route::get('/equipments', [EquipmentController::class, 'index'])->name('equipment.index');
+//Route::get('/equipments/create', [EquipmentController::class, 'create']);
+//Route::get('/equipments/update', [EquipmentController::class, 'update']);
+//Route::get('/equipments/delete', [EquipmentController::class, 'delete']);
+//Route::get('/equipments/first_or_create', [EquipmentController::class, 'firstOrCreate']);
+//Route::get('/equipments/update_or_create', [EquipmentController::class, 'updateOrCreate']);

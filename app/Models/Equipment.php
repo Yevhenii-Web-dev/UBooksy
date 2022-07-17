@@ -18,7 +18,7 @@ class Equipment extends Model
         'equipment_id',
         'maker',
         'model',
-        'type',
+        'type_model',
         'created_at',
         'updated_at'
     ];

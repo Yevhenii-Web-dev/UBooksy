@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('equipment_id');
             $table->string('maker', 10);
             $table->string('model', 50);
-            $table->string('type', 50);
+            $table->string('type_model', 50);
             $table->timestamps();
 
             $table->softDeletes();
